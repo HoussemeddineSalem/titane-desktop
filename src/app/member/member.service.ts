@@ -2,9 +2,9 @@ import {EventEmitter, Injectable} from '@angular/core';
 
 import {HttpClient} from '@angular/common/http';
 
-import {Recipe} from './member.model';
+import {Member, Recipe} from './member.model';
 import {Ingredient} from '../shared/ingredient.model';
-import {ShoppingListService} from '../shopping-list/shopping-list.service';
+import {LendingListService} from '../lending-list/lending-list.service';
 import {Observable} from "rxjs";
 
 @Injectable()
@@ -30,7 +30,7 @@ export class MemberService {
   ];
   url = 'http://localhost:8080/v1/member';
 
-  constructor(private slService: ShoppingListService, private http: HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
   getRecipes() {
@@ -42,14 +42,18 @@ export class MemberService {
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.slService.addIngredients(ingredients);
+    //this.slService.addIngredients(ingredients);
   }
 
   createMember(member): Observable<any> {
     return this.http.post(this.url, member);
   }
 
-  getMember(): Observable<any> {
-    return this.http.get(this.url);
+  getMember(): Observable<Member[]> {
+    return this.http.get<Member[]>(this.url);
+  }
+
+  updateMember(memberId, member): Observable<any> {
+    return this.http.put(this.url + '/' + memberId, member);
   }
 }

@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-lending-edit (newBookLent)="newBookLent($event)"></app-lending-edit>
+    <hr>
+    <ul class="list-group">
+      <div
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let member of list"
+      >
+        <div>
+          {{ member.firstName }} has borrowed ({{ member.borrowedBooksIds.length }}) books
+        </div>
+        <div>
+          <div style="display: flex; justify-content: flex-start; align-items: center;flex-direction: row">
+            List of Books :
+          </div>
+          <div *ngFor="let b of member.borrowedBooksIds"
+               style="display: flex;
+                justify-content: flex-start;
+                 align-items: center;
+                 flex-direction: row;"
+          >{{b.title}}</div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>

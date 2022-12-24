@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -9,10 +9,10 @@ import { MemberComponent } from './member/member.component';
 import { MemberListComponent } from './member/member-list/member-list.component';
 import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MemberItemComponent } from './member/member-list/member-item/member-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { LendingListComponent } from './lending-list/lending-list.component';
+import { LendingEditComponent } from './lending-list/lending-edit/lending-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { LendingListService } from './lending-list/lending-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MemberStartComponent } from './member/member-start/member-start.component';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
@@ -21,6 +21,8 @@ import { BookListComponent } from './book/book/book-list/book-list.component';
 import { BookItemComponent } from './book/book/book-list/book-item/book-item.component';
 import { BookAddComponent } from './book/book/book-add/book-add.component';
 import { BookStartComponent } from './book/book/book-start/book-start.component';
+import {MemberService} from './member/member.service';
+import {BookService} from './book/book.service';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,8 @@ import { BookStartComponent } from './book/book/book-start/book-start.component'
     MemberListComponent,
     MemberDetailComponent,
     MemberItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
+    LendingListComponent,
+    LendingEditComponent,
     DropdownDirective,
     MemberStartComponent,
     MemberEditComponent,
@@ -45,10 +47,11 @@ import { BookStartComponent } from './book/book/book-start/book-start.component'
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
-  providers: [ShoppingListService],
+  providers: [LendingListService, MemberService, BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

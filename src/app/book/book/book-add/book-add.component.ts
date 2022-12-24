@@ -26,7 +26,7 @@ export class BookAddComponent implements OnInit {
       console.log(_);
       this.title = null;
       this.author = null;
-      this.bookService.getBooks().subscribe(_ => this.newBookAdded.emit(_));
+      this.bookService.getBooks(null).subscribe(_ => this.newBookAdded.emit(_));
     });
   }
 

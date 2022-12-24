@@ -19,7 +19,7 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bookService.getBooks().subscribe(res => this.books = res.reverse());
+    this.bookService.getBooks(null).subscribe(res => this.books = res.reverse());
   }
 
   onNewRecipe() {

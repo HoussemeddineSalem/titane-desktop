@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MemberComponent } from './member/member.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { LendingListComponent } from './lending-list/lending-list.component';
 import { MemberStartComponent } from './member/member-start/member-start.component';
 import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'book', component: BookComponent, children : [{
     path: '', component: BookStartComponent
     }] },
-  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'lending-list', component: LendingListComponent },
 ];
 
 @NgModule({

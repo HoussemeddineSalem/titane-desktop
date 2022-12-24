@@ -14,7 +14,8 @@ export class BookService {
     return this.http.post(this.url, book);
   }
 
-  getBooks(): Observable<any> {
-    return this.http.get(this.url);
+  getBooks(id): Observable<any> {
+
+    return this.http.get(id ? this.url + '?id=' + id : this.url);
   }
 }
