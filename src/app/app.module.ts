@@ -7,12 +7,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MemberComponent } from './member/member.component';
 import { MemberListComponent } from './member/member-list/member-list.component';
-import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MemberItemComponent } from './member/member-list/member-item/member-item.component';
 import { LendingListComponent } from './lending-list/lending-list.component';
 import { LendingEditComponent } from './lending-list/lending-edit/lending-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-import { LendingListService } from './lending-list/lending-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MemberStartComponent } from './member/member-start/member-start.component';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
@@ -30,7 +28,6 @@ import {BookService} from './book/book.service';
     HeaderComponent,
     MemberComponent,
     MemberListComponent,
-    MemberDetailComponent,
     MemberItemComponent,
     LendingListComponent,
     LendingEditComponent,
@@ -51,7 +48,7 @@ import {BookService} from './book/book.service';
     ReactiveFormsModule
 
   ],
-  providers: [LendingListService, MemberService, BookService],
+  providers: [MemberService, BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

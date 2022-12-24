@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import {Member, Recipe} from '../../member.model';
+import {Member} from '../../member.model';
 
 @Component({
   selector: 'app-member-item',

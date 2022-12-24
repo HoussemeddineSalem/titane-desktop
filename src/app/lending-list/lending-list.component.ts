@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Ingredient} from '../shared/ingredient.model';
-import {LendingListService} from './lending-list.service';
 import {BookService} from '../book/book.service';
 import {MemberService} from '../member/member.service';
 

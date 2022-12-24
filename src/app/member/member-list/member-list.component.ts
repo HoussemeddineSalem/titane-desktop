@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Recipe } from '../member.model';
 import { MemberService } from '../member.service';
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-recipe-list',

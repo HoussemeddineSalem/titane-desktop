@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { MemberComponent } from './member/member.component';
 import { LendingListComponent } from './lending-list/lending-list.component';
 import { MemberStartComponent } from './member/member-start/member-start.component';
-import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
 import {BookComponent} from './book/book/book.component';
 import {BookStartComponent} from './book/book/book-start/book-start.component';
@@ -14,7 +13,6 @@ const appRoutes: Routes = [
   { path: 'member', component: MemberComponent, children: [
     { path: '', component: MemberStartComponent },
     { path: 'new', component: MemberEditComponent },
-    { path: ':id', component: MemberDetailComponent },
     { path: ':id/edit', component: MemberEditComponent },
   ] },
   { path: 'book', component: BookComponent, children : [{

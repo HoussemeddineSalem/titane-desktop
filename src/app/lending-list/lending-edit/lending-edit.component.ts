@@ -1,17 +1,13 @@
 import {
   Component,
-  OnInit,
-  ElementRef,
-  ViewChild, EventEmitter, Output
+  OnInit,EventEmitter, Output
 } from '@angular/core';
 
-import {Ingredient} from '../../shared/ingredient.model';
-import {LendingListService} from '../lending-list.service';
+
 import {Book} from '../../book/book.model';
 import {MemberService} from '../../member/member.service';
 import {BookService} from '../../book/book.service';
 import {Member} from '../../member/member.model';
-import {absoluteFromSourceFile} from '@angular/compiler-cli/src/ngtsc/file_system';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({

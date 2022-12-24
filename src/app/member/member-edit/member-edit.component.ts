@@ -1,8 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
-import {FormGroup, FormControl} from '@angular/forms';
-import {MemberService} from "../member.service";
-import {logger} from "codelyzer/util/logger";
+import {MemberService} from '../member.service';
 
 @Component({
   selector: 'app-member-edit',
