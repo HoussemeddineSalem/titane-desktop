@@ -4,12 +4,17 @@
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
-    <app-member-item
-      *ngFor="let recipeEl of recipes; let i = index"
-      [recipe]="recipeEl"
-      [index]="i"></app-member-item>
+<div style="display: flex;justify-content: space-around; width: 1000px">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-member-item
+        *ngFor="let recipeEl of recipes; let i = index"
+        [member]="recipeEl"
+        [index]="i"></app-member-item>
+    </div>
+  </div>
+  <div style="width: 50%; margin: 10px" *ngIf="isAddNewMemberButtonClicked">
+    <app-member-edit (newMemberAdded)="newMemberAdded($event)"></app-member-edit>
   </div>
 </div>
 

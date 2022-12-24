@@ -12,6 +12,7 @@ import {Observable} from "rxjs";
 })
 export class MemberListComponent implements OnInit {
   recipes: any[];
+  isAddNewMemberButtonClicked = false;
 
   constructor(private recipeService: MemberService,
               private router: Router,
@@ -19,10 +20,14 @@ export class MemberListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.recipeService.getMember().subscribe(res => this.recipes = res);
+    this.recipeService.getMember().subscribe(res => this.recipes = res.reverse());
   }
 
   onNewRecipe() {
-    this.router.navigate(['new'], {relativeTo: this.route});
+    this.isAddNewMemberButtonClicked = !this.isAddNewMemberButtonClicked;
+  }
+
+  newMemberAdded(members) {
+    this.recipes = members.reverse();
   }
 }

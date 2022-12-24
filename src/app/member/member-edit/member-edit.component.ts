@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {FormGroup, FormControl} from '@angular/forms';
 import {MemberService} from "../member.service";
@@ -15,6 +15,8 @@ export class MemberEditComponent implements OnInit {
   firstName: string;
   lastName: string;
   email: string;
+
+  @Output() newMemberAdded = new EventEmitter<any>();
 
   constructor(private route: ActivatedRoute, private recipeService: MemberService) {
   }
@@ -37,7 +39,8 @@ export class MemberEditComponent implements OnInit {
        this.lastName = null;
        this.email = null ;
 
-       this.recipeService.getMember().subscribe(_ => console.log(_));
+      // tslint:disable-next-line:no-shadowed-variable
+       this.recipeService.getMember().subscribe(_ => this.newMemberAdded.emit(_));
     });
   }
 

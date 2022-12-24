@@ -13,3 +13,14 @@ export class Recipe {
     this.ingredients = ingredients;
   }
 }
+export class Member {
+  public firstName: string;
+  public lastName: string;
+  public email: string;
+
+  constructor(firstName: string, lastName: string, email: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+  }
+}

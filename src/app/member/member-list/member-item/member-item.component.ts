@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Recipe } from '../../member.model';
+import {Member, Recipe} from '../../member.model';
 
 @Component({
   selector: 'app-member-item',
@@ -8,7 +8,7 @@ import { Recipe } from '../../member.model';
   styleUrls: ['./member-item.component.css']
 })
 export class MemberItemComponent implements OnInit {
-  @Input() recipe: any;
+  @Input() member: Member;
   @Input() index: number;
 
   ngOnInit() {

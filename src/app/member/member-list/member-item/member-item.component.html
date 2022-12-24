@@ -3,14 +3,33 @@
   [routerLink]="[index]"
   routerLinkActive="active"
   class="list-group-item clearfix">
+
   <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipe.firstName }}</h4>
-    <p class="list-group-item-text">{{ recipe.lastName }}</p>
+    <div
+      style="display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+       ;
+">
+      <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin:5px">
+        <label >First Name : </label>
+        <h4>{{ member.firstName }}</h4>
+      </div>
+      <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin:5px">
+        <label>Last Name : </label>
+        <h4 >{{ member.lastName }}</h4>
+      </div>
+    </div>
+    <div style="display: flex;flex-direction: row;justify-content: flex-start;align-items: center;margin:5px">
+      <label>Email :</label>
+      <h4 >{{ member.email }}</h4>
+    </div>
   </div>
   <span class="pull-right">
         <img
-          [src]="recipe?.imagePath"
-          alt="{{ recipe.firstName }}"
+          [src]="'https://ui-avatars.com/api?name='+member.firstName+'+'+member.lastName"
+          alt="{{ member.firstName }}"
           class="img-responsive"
           style="max-height: 50px;">
       </span>
