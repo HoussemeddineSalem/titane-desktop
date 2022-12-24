@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Recipe } from '../member.model';
-import { MemberService } from '../member.service';
+import { Recipe } from '../book.model';
+import { BookService } from '../book.service';
 import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-member-list',
-  templateUrl: './member-list.component.html',
-  styleUrls: ['./member-list.component.css']
+  selector: 'app-recipe-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.css']
 })
-export class MemberListComponent implements OnInit {
+export class BookListComponent implements OnInit {
   recipes: any[];
 
-  constructor(private recipeService: MemberService,
+  constructor(private recipeService: BookService,
               private router: Router,
               private route: ActivatedRoute) {
   }

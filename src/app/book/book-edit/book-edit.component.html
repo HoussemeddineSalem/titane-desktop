@@ -1,0 +1,17 @@
+<div style="width: 50%;display: flex; flex-direction: column; justify-content: space-around; height: 220px">
+  <div style="display: flex; justify-content: space-between">
+    <label>First Name</label>
+    <input type="text" [(ngModel)]="firstName">
+  </div>
+  <div style="display: flex; justify-content: space-between">
+    <label>Last Name</label>
+    <input type="text" [(ngModel)]="lastName">
+
+  </div>
+  <div style="display: flex; justify-content: space-between">
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email">
+
+  </div>
+  <button (click)="createMember()">Submit</button>
+</div>
