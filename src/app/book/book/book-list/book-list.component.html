@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewRecipe()">New Book</button>
+  </div>
+</div>
+<hr>
+<div style="display: flex;justify-content: space-around; width: 1000px">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-book-item
+        *ngFor="let book of books; let i = index"
+        [book]="book"
+        [index]="i"></app-book-item>
+    </div>
+  </div>
+  <div style="width: 50%; margin: 10px" *ngIf="isAddNewBookButtonClicked">
+    <app-book-add (newBookAdded)="newBookAdded($event)" ></app-book-add>
+  </div>
+</div>

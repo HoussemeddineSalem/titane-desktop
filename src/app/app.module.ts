@@ -16,6 +16,11 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MemberStartComponent } from './member/member-start/member-start.component';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
+import { BookComponent } from './book/book/book.component';
+import { BookListComponent } from './book/book/book-list/book-list.component';
+import { BookItemComponent } from './book/book/book-list/book-item/book-item.component';
+import { BookAddComponent } from './book/book/book-add/book-add.component';
+import { BookStartComponent } from './book/book/book-start/book-start.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { MemberEditComponent } from './member/member-edit/member-edit.component'
     DropdownDirective,
     MemberStartComponent,
     MemberEditComponent,
+    BookComponent,
+    BookListComponent,
+    BookItemComponent,
+    BookAddComponent,
+    BookStartComponent,
   ],
   imports: [
     BrowserModule,

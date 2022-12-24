@@ -1,0 +1,12 @@
+<div style="width: 50%;display: flex; flex-direction: column; justify-content: space-around; height: 220px">
+  <div style="display: flex; justify-content: space-between">
+    <label>Book title</label>
+    <input type="text" [(ngModel)]="title">
+  </div>
+  <div style="display: flex; justify-content: space-between">
+    <label>Author Name</label>
+    <input type="text" [(ngModel)]="author">
+
+  </div>
+  <button (click)="createBook()">Submit</button>
+</div>

@@ -6,6 +6,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { MemberStartComponent } from './member/member-start/member-start.component';
 import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
+import {BookComponent} from './book/book/book.component';
+import {BookStartComponent} from './book/book/book-start/book-start.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/member', pathMatch: 'full' },
@@ -15,6 +17,9 @@ const appRoutes: Routes = [
     { path: ':id', component: MemberDetailComponent },
     { path: ':id/edit', component: MemberEditComponent },
   ] },
+  { path: 'book', component: BookComponent, children : [{
+    path: '', component: BookStartComponent
+    }] },
   { path: 'shopping-list', component: ShoppingListComponent },
 ];
 
