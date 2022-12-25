@@ -30,4 +30,8 @@ export class BookListComponent implements OnInit {
     this.books = books.reverse();
   }
 
+  bookDeleted(id) {
+    this.bookService.getBooks(null).subscribe(res => this.books = res.reverse());
+  }
+
 }

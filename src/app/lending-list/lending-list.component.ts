@@ -22,11 +22,10 @@ export class LendingListComponent implements OnInit {
   newBookLent(_) {
     this.bookService.getBooks(null).subscribe(books => {
       this.memberService.getMember().subscribe(members => {
-        console.log(members);
         members.forEach(member => {
-          member.borrowedBooksIds = books.filter(book => member.borrowedBooksIds.includes(book.id));
+          member.borrowedBooksIds = books.filter(book => member?.borrowedBooksIds?.includes(book.id));
         });
-        this.list = members.reverse();
+        this.list = members?.reverse();
       });
     });
   }

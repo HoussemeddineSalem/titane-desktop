@@ -24,11 +24,13 @@
       <h4 >{{ member.email }}</h4>
     </div>
   </div>
-  <span class="pull-right">
+  <span
+  style="display: flex;flex-direction: column; justify-content: space-between;align-items: center">
         <img
           [src]="'https://ui-avatars.com/api?name='+member.firstName+'+'+member.lastName"
           alt="{{ member.firstName }}"
           class="img-responsive"
-          style="max-height: 50px;">
+          style="max-height: 50px;margin-bottom: 10px">
+    <button (click)="deleteMember(member.id)">Delete</button>
       </span>
 </a>

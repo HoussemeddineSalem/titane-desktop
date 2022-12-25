@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { MemberService } from '../member.service';
+import {Member} from '../member.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,16 +10,14 @@ import { MemberService } from '../member.service';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
-  recipes: any[];
+  members: Member[];
   isAddNewMemberButtonClicked = false;
 
-  constructor(private recipeService: MemberService,
-              private router: Router,
-              private route: ActivatedRoute) {
+  constructor(private memberService: MemberService) {
   }
 
   ngOnInit() {
-    this.recipeService.getMember().subscribe(res => this.recipes = res.reverse());
+    this.memberService.getMember().subscribe(res => this.members = res.reverse());
   }
 
   onNewRecipe() {
@@ -26,6 +25,10 @@ export class MemberListComponent implements OnInit {
   }
 
   newMemberAdded(members) {
-    this.recipes = members.reverse();
+    this.members = members.reverse();
+  }
+  memberDeleted(id) {
+    console.log('ici');
+    this.memberService.getMember().subscribe(res => this.members = res.reverse());
   }
 }

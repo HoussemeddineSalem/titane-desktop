@@ -1,7 +1,5 @@
 <a
   style="cursor: pointer;"
-  [routerLink]="[index]"
-  routerLinkActive="active"
   class="list-group-item clearfix">
 
   <div class="pull-left">
@@ -20,17 +18,9 @@
         <label>Author : </label>
         <h4 >{{ book.author }}</h4>
       </div>
+      <button (click)="deleteBook(book.id)">Delete</button>
     </div>
-<!--    <div style="display: flex;flex-direction: row;justify-content: flex-start;align-items: center;margin:5px">-->
-<!--      <label>Email :</label>-->
-<!--      <h4 >{{ book.email }}</h4>-->
-<!--    </div>-->
   </div>
   <span class="pull-right">
-<!--        <img-->
-<!--          [src]="'https://ui-avatars.com/api?name='+book.firstName+'+'+book.lastName"-->
-<!--          alt="{{ book.firstName }}"-->
-<!--          class="img-responsive"-->
-<!--          style="max-height: 50px;">-->
       </span>
 </a>

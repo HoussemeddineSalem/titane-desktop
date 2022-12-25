@@ -23,4 +23,8 @@ export class MemberService {
   updateMember(memberId, member): Observable<any> {
     return this.http.put(this.url + '/' + memberId, member);
   }
+
+  deleteMember(memberId): Observable<any> {
+    return this.http.delete(this.url + '/' +  memberId);
+  }
 }

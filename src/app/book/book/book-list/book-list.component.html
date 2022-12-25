@@ -10,7 +10,8 @@
       <app-book-item
         *ngFor="let book of books; let i = index"
         [book]="book"
-        [index]="i"></app-book-item>
+        [index]="i"
+      (bookDeleted)="bookDeleted($event)"></app-book-item>
     </div>
   </div>
   <div style="width: 50%; margin: 10px" *ngIf="isAddNewBookButtonClicked">

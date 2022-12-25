@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Member} from '../../../../member/member.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Book} from '../../../book.model';
+import {BookService} from '../../../book.service';
 
 @Component({
   selector: 'app-book-item',
@@ -10,9 +10,13 @@ import {Book} from '../../../book.model';
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
   @Input() index: number;
-  constructor() { }
+  @Output() bookDeleted: EventEmitter<any> = new EventEmitter<any>();
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
   }
+
+  deleteBook(id){
+    this.bookService.deleteBook(id).subscribe(_ => this.bookDeleted.emit(id))}
 
 }
