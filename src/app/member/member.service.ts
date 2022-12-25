@@ -7,8 +7,7 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class MemberService {
-  recipeSelected = new EventEmitter<any>();
-  url = 'http://localhost:8080/v1/member';
+  url = 'http://localhost:8090/v1/member';
 
   constructor(private http: HttpClient) {
   }
